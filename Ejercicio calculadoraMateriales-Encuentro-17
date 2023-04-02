@@ -1,0 +1,155 @@
+Algoritmo calculadoraMateriales
+	menu()
+FinAlgoritmo
+SubProceso menu()
+	definir option Como Entero
+	
+	Escribir "1. Calcular muro de ladrillo"
+	Escribir "2. Calcular viga de hormigón"
+	Escribir "3. Calcular columnas de hormigón"
+	Escribir "4. Calcular contrapisos"
+	escribir "5. Calcular techo"
+	escribir "6. Calcular pisos"
+	Escribir "7. Calcular pintura"
+	escribir "8. Calcular iluminación"
+	Escribir "9. Salir"
+	Escribir " seleccione una opcion"
+	leer option
+	Segun option Hacer
+		1:
+			Escribir "opcion-1"
+			CalcularMuro()
+		2:
+			CalcularViga()
+		3:
+			CalcularColumna()
+		4:
+			CalcularContrapisos()
+		5:
+			CalcularTecho()
+		6:
+			CalcularPisos()
+		7:
+			CalcularPintura()
+		8:
+			CalcularIluminacion()
+		9:
+			salir()
+		De Otro Modo:
+		escribir" opcion incorecta"
+	Fin Segun
+FinSubProceso
+
+SubProceso CalcularMuro()
+	definir espesor ,largo,alto , area ,arena, cemento , ladrillo como real
+	Escribir "   indique el espesor (20 o 30 ) cm"
+	leer espesor
+	Mientras espesor<> 20 y espesor<>30 Hacer
+		Escribir "   indique el espesor (20 o 30 ) cm"
+		leer espesor
+	Fin Mientras
+	Escribir " indique el largo "
+	leer largo
+	Escribir "indique el alto"
+	Leer  alto
+	area =largo*alto
+	Segun espesor Hacer
+		20:
+			cemento= area*10.9
+			arena= area* 0.09
+			ladrillo= 90	
+		30:
+			cemento= area*15.2
+			arena= area* 0.115
+			ladrillo=120
+	Fin Segun
+	  Escribir "para el muro de: ",espesor,"  necesitaremos por metro cuadrado:  ", cemento,  " kg de cemento,  ", arena , "  m3 de arena  y  " , ladrillo , "  ladrillos."
+FinSubProceso
+
+SubProceso CalcularViga()
+	definir largo, cemento,arena,piedra,hierroDel4,hierroDel8 Como Real
+	Escribir "  indique el largo de la viga"
+	leer largo
+	cemento= largo *9
+	arena = largo*0.02
+	piedra=largo*0.02
+	hierroDel8=4
+	hierroDel4=3
+	Escribir "para  la viga de largo: ",largo," necesitaremos por metro cuadrado:", cemento," kg de cemento,", arena , "  m3 de arena y " , piedra , " m2 piedra.", hierroDel8," m hierro del 8 y ", hierroDel4," m hierro del 4"
+FinSubProceso
+
+
+SubProceso CalcularColumna()
+	definir largo, cemento,arena,piedra,hierroDel4,hierroDel10 Como Real
+	Escribir "  indique el largo de columna"
+	leer largo
+	cemento= largo *7.5
+	arena = largo*0.016
+	piedra=largo*0.016
+	hierroDel10=6
+	hierroDel4=3
+	Escribir "para  la viga de largo: ",largo," necesitaremos por metro cuadrado:", cemento," kg de cemento,", arena , "  m3 de arena y " , piedra , " m2 piedra.", hierroDel10," m hierro del 10 y ", hierroDel4," m hierro del 4"
+FinSubProceso
+
+SubProceso CalcularContrapisos()
+	definir espesor, largo ,ancho, area ,cemento , piedra,arena como real 
+	escribir "indique el largo"
+	Leer largo
+	escribir "indique el espesor"
+	Leer espesor
+	escribir "indique el ancho"
+	leer ancho
+	area=espesor*ancho*largo
+	cemento=area*105
+	arena=area*0.45
+	piedra=area*0.9
+	Escribir "para  el contrapiso necesitaremos por metro cubico:", cemento," kg de cemento,", arena , "  m3 de arena y " , piedra , " m3 piedra."
+FinSubProceso
+
+SubProceso CalcularTecho()
+	definir espesor, largo ,ancho, area ,cemento , piedra,arena,hierroDel8,hierroDel6 como real 
+	escribir "indique el largo"
+	Leer largo
+	escribir "indique el espesor"
+	Leer espesor
+	escribir "indique el ancho"
+	leer ancho
+	area=espesor*ancho*largo
+	cemento=area*33
+	arena=area*0.072
+	piedra=area*0.072
+	hierroDel8=7
+	hierroDel6=4
+	Escribir "para el techo necesitaremos por metro cuadrado:", cemento," kg de cemento,", arena , "  m3 de arena y " , piedra , " m3 piedra.", hierroDel8," m hierro del 8 y ", hierroDel6," m hierro del 6"
+FinSubProceso
+	
+SubProceso CalcularPisos()
+	definir ancho ,largo,area como real 
+	escribir "indique el ancho del piso"
+	leer ancho
+	escribir "indique el largo del piso"
+	leer largo
+	area=largo *ancho
+	escribir "se necesitan ",(area+(area*0.10)), " m2 de baldosas incluyendo recortes."
+FinSubProceso
+
+SubProceso CalcularPintura()
+	definir superficie como real
+	escribir" indique la superficie  que va a pintar "
+	leer superficie 
+	escribir"para una superficie de: ",superficie," m2, se necesitan  ",(superficie /6)," litros de pintura. "
+FinSubProceso
+
+SubProceso CalcularIluminacion()
+	definir superficie como real
+	escribir" indique la superficie  a iluminar "
+	leer superficie 
+	escribir" la cantidad minima de iluminacion natural es: ",(superficie*0.20)," (ventanas y puerta de vidrio. "
+FinSubProceso
+
+SubProceso salir()
+	Limpiar Pantalla
+	Escribir " muchas gracias, por preferirnos. Que tenga buen día."
+	
+FinSubProceso
+
